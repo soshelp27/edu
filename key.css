@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.any{
+    font-size: 3em;
+    animation-name: fadeInout;
+/* 애니메이션의 이름을 지정합니다     */
+    /* animation-duration: 1s; */
+/* 한 싸이클의 애니메이션이 얼마에 걸쳐 일어날지 지정합니다 */
+    /* animation-delay: 3s; */
+/* 언제 애니메이션이 시작될지 지정합니다 */
+    /* animation-direction: normal; */
+/* normal : 기본값 재생 끝나면 처음부터 다시 재생 */
+/* reverse : 역방향으로 재생 */
+/* alternate: tnsqkdgid 순방향 <-> 역방향으로 재생 */
+/* alternate-reverse 역방향 <-> 순방향으로 재생 */
+    /* animation-iteration-count: infinite; */
+/* 애니메이션이 몇 번 반복될지 지정합니다. */
+    /* animation-play-state: running; */
+/* 애니메이션을 멈추거나 다시 시작할 수 있음 */
+    /* animation-timing-function: ease-in-out; */
+    /* 중간 상태들의 전한을 어떤 시간간격으로 진행할지 지정 */
+    /* animation-fill-mode: both; */
+    /* 애니메이션이 시작되기 전이나 끝나고 난 후 어떤 값이 적용될지 지정 */
+    animation: fadeInout 1s ease-in-out 3s infinite alternate both running;
+}
+@keyframes fadeInout{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        color: #0000ff;
+    }
+} /* none라는 네임은 재생하지 않습니다. */
+/* 숫자시작, 특수문자 시작 안 함 */
+/* 여백은 사용 안 됨, 한글도 사용 안 됨 */
+/* 0%은 from과 같음, 100%은 to와 같음 */

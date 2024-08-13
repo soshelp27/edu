@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.any{
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background-color: #333;
+    border-radius: 50%;
+    border-top: solid 20px #0000ff;
+    border-bottom: solid 20px #0000ff;
+    border-left: solid 20px #ff0000;
+    border-right: solid 20px #ff0000;
+    left: calc(50% - 120px);
+    animation: rotate 1s ease-in-out 1s infinite alternate both;
+}
+@keyframes rotate{
+    0%{
+        top: 0;
+        transform: rotate(0deg);
+    }
+    100%{
+        top: 60%;
+        transform: rotate(720deg);
+    }
+}
