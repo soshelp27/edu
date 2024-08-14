@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/form.css">
+    
+</head>
+<body>
+    <form id="join">
+        <fieldset>
+            <h2>로그인</h2>
+            <ul class="idpw">
+                <li>
+                    <input type="email" id="email" pattern=".+@example\.com" placeholder="아이디(이메일)" name="name" required autofocus>
+                </li>
+                <li>
+                    <input type="password" placeholder="비밀번호" required>
+                </li>
+            </ul>
+            <div class="check-01">    
+                <span>
+                    <input type="checkbox" name="check" id="login-check">
+                    <label for="login-check">자동로그인</label>
+                </span>
+            </div>
+            <input type="submit" value="확인">
+            <a href="#" class="join-btn">회원가입</a>
+            <span class="check-03"></span>
+            <a href="#" class="find-btn">아이디/비밀번호 찾기</a>
+            <ul class="sns-join">
+                <li class="face">
+                    <a href="#">페이스북</a>
+                </li>
+                <li class="google">
+                    <a href="#">구글</a>
+                </li>
+                <li class="naver">
+                    <a href="#">네이버</a>
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>
