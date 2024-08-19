@@ -1,0 +1,81 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+ul, dl, ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333333;
+}
+#wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+#header{
+    border-bottom: solid 1px #333;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+#header h1{}
+#header h1 a{
+    display: block;
+}
+#header h1 a img{
+    display: block;
+}
+#header nav{
+    width: 60%;
+}
+
+#header .depth-01{
+    display: flex;
+}
+#header .depth-01 > li{
+    position: relative;
+    width: 25%;
+}
+#header .depth-01 > li > a{
+    display: block;
+    line-height: 60px;
+    text-align: center;
+}
+
+#header .depth-02{
+    position: absolute;
+    width: 100%;
+    top:100%;
+    left: 0;
+    overflow: hidden;
+    height: 0;
+    transition: all 0.6s ease-in-out;
+}
+#header .depth-02 li{}
+#header .depth-02 li a{
+    display: block;
+    line-height: 60px;
+    text-align: center;
+}
+#header .depth-01:hover .depth-02{
+    height: 400px;
+}
+#header .depth-01 > li:hover > a,
+#header .depth-02 li:hover a{
+    background-color: #333;
+    color: #fff;
+}
+
+/* ************************** */
+
+#mainBanner{}
+#mainBanner ul{
+    height: 300px;
+    background-color: ccc;
+}
+#mainBanner ul li{}
+#mainBanner ul li a{}
+    </div>    
+</body>
