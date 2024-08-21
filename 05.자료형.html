@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 데이터 타입은 크게 8가지로 나뉨
+        //문자열 (string)
+        //숫자 (number)
+        //불린 (Boolean) [true, false]
+        //배열 (Array)
+        //함수 (Function)
+        //널 (null) : 변수가 의도적으로 '값이없음'을 나태내도록 설정된 상태
+        //  (변수를 명시적으로 비워두고 싶을 때 사용하는 값)
+        // 미정의 (undefinde) : 변수가 선언되었지만, 아직 값이 할당되지 않은 상태
+            // 변수 선언 후에 초기화 하지않으면 기본적으로 undefinde 값이 할당됨
+            //의도적으로 undefinde를 할당앟는 경우는 거의 없음
+        //객체 (object)
+
+        //원시형
+        // : 변경할 수 없는 값을 얘기함, 한 번 생성되면 변경 불가능
+        // 새로운 값을 할당 하면 기존값이 아닌 새로운 값이 메모리에 저장됨
+        // 변수에 직접 저장됨. 값으로 비교됨. 간단한 값, 숫자, 문자 등
+
+            // 01.문자열 (string)
+        const string1 = "World!"; //기호("")를 사용하여 데이터를 만들었음  
+        const string2 = `Hello ${string1}`; //기호(``)를 사용하여 데이터를 만들었음
+        console.log(string2);
+        // `` -> 템플릿 리터럴이라 부른다.
+        // 이처럼 기호를 사용하여 데이터를 만드는 방식을 리터럴 방식이라고 함
+
+            //02. 숫자 (Number)
+        const num = -123; // 양수, 음수 모두 취급한다. 
+        const pi = 3.14; // 앞에 숫자가 0일 때는 .14 생략 가능 
+        console.log(num + 1);
+        // 초기값으로 데이터 타입을 판단
+        // 변수 (사칙연산) 숫자 가능
+        console.log(num + undefined); // NaN -> Not a Number
+        //데이터의 타입은 숫자인데, 숫자로 표기할 수 없는 값을 뜻함
+
+        // 부동소수점 오류. --------> 소수점 계산은 그래서 만약 믿을 수 없음
+        //간혹 무한 소수라는 개념이 발생하게 됨
+        //그걸 유한하게 표현하려고 조금 세부적인 값의 초과 또는 손실을 일으킴
+        //덧셈과 같은 소수점 연산은 오류가 발생할 수 있다.
+        //근사치로 표현을 한다. : 의도치 않은 연산 오류 발생
+        const a = 0.1; //10진법
+        const b = 0.2; 
+        console.log(a + b);
+        // 하지만 console.log(a+b)= 0.3이라 나오지 않는다
+        // 해당의 결과값은 : 0.300000000000000004
+        // 흔히 우리가 사용하는 숫자는 십진수
+
+        //원하는 소수점까지 잘라내기 (번외) >
+        console.log((a + b).toFixed(1));
+        // toFixed(1) > 소수점 1의 자리까지 자르라 : 하지만 이걸 사용하면 얘는 숫자가 아닌 문자열이 되어버린..
+        console.log(Number((a + b).toFixed(1)));
+        // 그래서 Number()를 이용
+        // 다음 호출 시, 계속 Number냐? 아니다...
+
+    </script>
+</body>
+</html>
