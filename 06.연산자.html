@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <script>
+        // 산술연산자
+
+        // let num1 = 15;
+        // let num2 = 2;
+        // let result;
+        
+        // result = num1 + num2;
+        // console.log(result); // 17
+
+        // result = num1 - num2;
+        // console.log(result); // 13
+        
+        // result = num1 * num2;
+        // console.log(result); // 30
+
+        // result = num1 ** num2;
+        // console.log(result); // 225
+
+        // result = num1 / num2;
+        // console.log(result); // 7.5
+
+        // result = num1 % num2;
+        // console.log(result); // >>> 얘는 나머지를 뜻함 그래서 1이 나옴
+
+        console.log(1 + 2);
+        console.log(5 - 7);
+        console.log(3 + 4);
+        console.log(2 ** 4); // 2의 4승
+        console.log(10 / 2);
+        console.log(7 % 5);
+
+        // 사용하는 기호 -> 연산자라 함
+        // 연산자 좌우에 있는 값을 피연산자라고 함
+        // 연산자는 기호, 피연산자는 데이터임
+
+        // 문자연산
+
+        const str1 = '기차가 어둠을 헤치고';
+        const str2 = '은하수를 건너면';
+        const num = '8282';
+        const str3 = '갑시다';
+
+        console.log(str1+str2+num+str3);
+        // 문자 + 문자 + 숫자 + 문자
+        // 결합시에 자동으로 데이터 타입이 큰 쪽(String) 변환
+
+        // 대입연산자
+
+        let num1 = 10;
+        let num2 = 3;
+
+        num1 += num2; // num1에 num1 + num2값을 대입해라
+        console.log(num1);
+
+        num1 -= num2; // num1에 num1 - num2값을 대입해라
+        console.log(num1);
+
+        num1 *= num2; // num1에 num1 * num2값을 대입해라
+        console.log(num1);
+
+        num1 /= num2; // num1에 num1 / num2값을 대입해라
+        console.log(num1);
+
+        num1 %= num2; // num1에 num1 % num2값을 대입해라
+        console.log(num1);
+
+
+        // 비교연산자
+        // 비교연산자는 언제나 블리인 데이터를 반환함
+
+        const A = 1;
+        const B = 3;
+
+        console.log('01', A > B); // false
+        console.log('02', A < B); // true
+        console.log('03', A >= B); // false
+        console.log('04', A <= B); // true
+        console.log('05', A == B); // false A와B는 같다 (데이터의 타입을 따지지 않음)
+        console.log('06', A != B); // true A와B는 같지 않다 (데이터의 타입을 따지지 않음)
+        console.log('07', A === B); // false (데이터의 타입까지 따지고 듬)
+        console.log('07', A !== B); // true (데이터의 타입까지 따지고 듬)
+
+        //주의사항
+
+        const int = 0;
+        const boal = false;
+
+        console.log(int == boal); // true 둘다 거짓값이 어서
+        console.log(int === boal); // false
+
+        // 논리연산자
+
+        const C = 1;
+        const D = 1;
+
+        console.log((C >= D) || (C == D)); // true
+        // C가 D보다 크거나 같다 or C가 D와 같다 (또는)
+        // 둘중 하나라도 true면 true를 반환
+
+        console.log((C > D) && (C == D)); // false
+        // C가 D보다 크다 and C가 D와 같다 (그리고)
+        // 둘중 하나라도 false가 존재하면 false 반환
+
+        console.log(!(C == D)); // false 이것은 부정 연산자라 그럼! 맨 앞에 느낌표는 값을 부정하는 값을 불러냄!
+
+        console.log('(1)', false || true || false); // true -> OR 연산자는 true를 만나는 순간 뒤까지 안 간다.
+        // 값이 맞으면 그 즉시 종료
+        // OR 연산자 와 AND 연산자가 같이 있으면 무조건 OR부터 계산
+
+        console.log('(2)', true && ''); // 
+        //AND 연산자는 앞의 조건이 참이면, AND 뒷부분을 반환함 그래서 저 경우 ''의 공백(빈값)을 내보냄
+
+        console.log('(3)', true && false && true); // false
+         // 중간에 false가 들어와서 망해버린 식
+         // 앞에 조건들이 전부 다 true여야만 맨 뒤의 식을 내보내줌
+         // 맨 뒤의 식조차 true여야만 함 
+
+        console.log('(4)', false || 'Iron Man'); // Iron Man
+        // 거짓값이 아닌 모든 것은 참이므로, 해당은 Iron Man을 참으로 여김
+
+        console.log('(5)', 0 && 'Iron Man'); // 0
+        // 0을 뱉었다는 것은 0을 false로 인식했다는 거임
+        // false를 의미하는 0을 뱉은 거임
+
+        console.log('(6)', 'Iron Man' || 'bateMan'); // Iron Man
+        // OR은 true를 만나면 뒤의 식까지 체크 안 함
+        
+        console.log('(7)', !false); // true
+        // !는 부정 (not연산자)
+
+        console.log('(8)', !(90 > 40)); // false
+        // (90 > 40)은 true 그 앞에 그걸 부정하는 !이 붙으므로 false
+
+        console.log('(9)', !(90 < 40 && 40 < 90)) //true(
+        // (fals && true) = 둘중 하는 false여서 false 값을 뱉음
+        // !(false) = true
+
+        // 삼항연산자
+
+        // let a = parseInt(prompt('당신의 나이는?')); // 숫자로 반환하게 됨
+        // let b = 30;
+
+        // let result1 = a > b ? "음..나이 때문에 고민이 많으시겠군요" : "오 아직 젊으시군요";
+        // console.log(result1);
+
+        // true면 첫 번째 문장을, false면 두 번째 문장을 내보냄
+
+        
+    //     let result2 = a > b ? alert('음..나이 때문에 고민이 많으시겠군요') : "오 아직 젊으시군요";
+
+    //     let age = parseInt(prompt('당신의 나이는?'));
+    //     let setAge = 30;
+
+    //     let result3 = age > setAge ? alert('음..나이 때문에 고민이 많으시겠군요') : alert('오 아직 젊으시군요');
+
+        // 삼항연산자 연습
+
+        // BMI(적정몸무게 구하기), 구하는 공식 bmi= (키-100) * 0.9
+        // 유저에게 몸무게, 키 입력받아 유저의 몸무게가 bmi보다 이상일 경우
+        // '살 좀빼세요'라고 알림창 띄우기
+        // 미만일 경우 '살 좀 찌세요'라고 하기
+        // // 묵시적 타입 변환 : 자바스크립트는 특정 타입의 값을 기대하는 곳에 다른 타입의 값이 들어오면 자동으로 타입을 변환해서 사용함
+
+        let key = parseInt(prompt('키는??')); 
+        let pig = parseInt(prompt('몸무게는??'));
+        let bmi = (key-100) * 0.9 > pig ? alert('살 좀 찌자!') : alert('살 좀 빼자!');
+
+        </script>
+</body>
+</html>
