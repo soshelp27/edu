@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fade in out</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #container{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #main_b{
+            width: 1200px;
+            height: 300px;
+            overflow: hidden;
+        }
+        #main_b ul{
+            width: 9999999px;
+            display: flex;
+        }
+        #main_b ul li{
+            width: 1200px;
+            height: 300px;
+        }
+        #main_b ul li a{
+            display: block;
+            line-height: 300px;
+            text-align: center;
+            font-size: 50px;
+            color: #fff;
+        }
+
+        #main_b .bg_01{
+            background-color: #ff0000;
+        }
+        #main_b .bg_02{
+            background-color: #00ff00;
+        }
+        #main_b .bg_03{
+            background-color: #0000ff;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="container">
+        <div id="main_b">
+            <ul>
+                <li class="bg_01"><a href="#">1</a></li>
+                <li class="bg_02"><a href="#">2</a></li>
+                <li class="bg_03"><a href="#">3</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+    
+            let slideWidth = $('#main_b ul li').outerWidth(); // outerWidth()를 사용하여 padding 포함
+            let dir = '-='; // 왼쪽으로 이동
+    
+            let autoSlide = setInterval(slide, 1500);
+    
+            function slide(){
+                $('#main_b ul').animate({'margin-left': dir + slideWidth + 'px'}, 1000, function(){
+                    // :first-child 사용하여 첫 번째 자식 요소를 선택
+                    $(this).find('li:first-child').appendTo($(this)); 
+                    $(this).css('margin-left', '0'); // margin-left를 '0'으로 설정
+                });
+            }
+        });
+    </script>
+    </body>

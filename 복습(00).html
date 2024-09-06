@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./복습(00).css">
+</head>
+<body>
+    <div id="container">
+        <div id="mainBox">
+            <ul>
+                <li class="bg-01"><a href="#"><img src="./dog_img/img01.png" alt="강아지1"></a></li>
+                <li class="bg-o2"><a href="#"><img src="./dog_img/img02.png" alt="강아지1"></a></li>
+                <li class="bg-o3"><a href="#"><img src="./dog_img/img03.png" alt="강아지1"></a></li>
+            </ul>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function(){
+                let count = 0;
+                
+                setInterval(function(){
+                    count++;
+                    count %= $('#mainBox ul li').length;
+                    $('#mainBox ul li').eq(count).fadeIn(300).siblings().fadeOut(300);
+
+                }, 1500);
+            });
+        </script>
+    </div>
+</body>
+</html>

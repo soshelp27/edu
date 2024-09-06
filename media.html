@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        html,
+        body{
+            font-size: 14px;
+        }
+        .list{
+            width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .list li{
+            width: 25%;
+            height: 300px;
+            background-color: #ffff00;
+            margin-bottom: 1%;
+            font-size: 1.8rem;
+        }
+        .list li:nth-child(odd){
+            background-color: #8a2be2;
+        }
+        @media screen and (max-width :1279px;){
+            .list li{
+                width: 33.3%;
+            }
+        }
+        /* 최대 넓이 1279px 이하일때 */
+        @media screen and (max-width :374px;){
+            .list{
+                display: block;
+            }
+            .list li{
+                font-size: 1.4rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li>나는 첫 번째 li</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

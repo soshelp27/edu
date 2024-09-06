@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    }
+    ul{
+        list-style: none;
+
+    }
+    a{
+        text-decoration: none;
+    }
+    #nikelist{
+        display: flex;
+        flex-wrap: wrap;
+        width: 1280px;
+        justify-content: space-between;
+        margin: 50px auto;
+    }
+    #nikelist li{
+        width: 30%;
+    }
+    #nikelist li a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        color: #333;
+    }
+    #nikelist li a img{
+        display: block;
+        width: 100%;
+        margin-top: 40px;
+    }
+    #nikelist li a span{
+        font-size: 18px;
+    }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./꼬똥드툴레아.css">
+</head>
+<body>
+    <div id="container">
+        <div id="mainBox">
+            <ul>
+                <li class="bg-01"><a href="#"><img src="./dog_img/img01.png" alt="강아지1"></a></li>
+                <li class="bg-02"><a href="#"><img src="./dog_img/img02.png" alt="강아지2"></a></li>
+                <li class="bg-03"><a href="#"><img src="./dog_img/img03.png" alt="강아지3"></a></li>
+            </ul>
+        </div>
+        <button id="toggleBtn">play</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+        
+            let count = 0;
+            let bool = true;
+
+            $('#mainBox ul li').eq(count).fadeIn(300);
+            
+            let autoFade = setInterval(fadeInOut, 1500);
+
+            $('#play').on('click', function(){
+            if(bool === true){
+                clearInterval(autoFade);
+                $(this).html('play');
+                bool = false;
+            } else {
+                autoFade = setInterval(fadeInOut, intervalTime);
+                $(this).html('stop');
+                bool = true;
+            }
+        });
+
+            function fadeInOut(){
+                count ++;
+                count %= $('#mainBox ul li').length;
+                $('#mainBox ul li').eq(count).fadeIn(300).siblings().fadeOut(300);
+            }
+        
+        });
+
+    </script>
+</body>
+</html>

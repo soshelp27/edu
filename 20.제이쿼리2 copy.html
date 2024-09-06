@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prop</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <ul>
+            <li>
+                <input id="checkAll" type="checkbox" name="all" class="All_check">
+                <label for="checkAll">Check ALL</label>
+            </li>
+            <li>
+                <input id="check_01" type="checkbox" name="c_01" class="box_name">
+                <label for="check_01">Checkbox 1</label>
+            </li>
+            <li>
+                <input id="check_02" type="checkbox" name="c_02" class="box_name">
+                <label for="check_02">Checkbox 2</label>
+            </li>
+            <li>
+                <input id="check_03" type="checkbox" name="c_03" class="box_name">
+                <label for="check_03">Checkbox 3</label>
+            </li>
+            <li>
+                <input id="check_04" type="checkbox" name="c_04" class="box_name">
+                <label for="check_04">Checkbox 4</label>
+            </li>
+        </ul>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(function(){
+        
+        $('#checkall').on('click', function(){ 
+            const isChecked = $(this).prop('checked');
+            $('.box_name').prop('checked',isChecked);
+            });
+
+            $('#checkall').on('click', function(){ 
+                const allChecked = $('bos_name').length === $('.box_name : checked').length;
+                $('.box_name').prop('checked',allChecked);    
+                });
+            });           
+
+    </script>
+    
+</body>
+</html>

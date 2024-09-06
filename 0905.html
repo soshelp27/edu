@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./꼬똥드툴레아.css">
+</head>
+<body>
+    <div id="container">
+        <div id="mainBox">
+            <ul>
+                <li class="bg-01"><a href="#"><img src="./dog_img/img01.png" alt="강아지1"></a></li>
+                <li class="bg-02"><a href="#"><img src="./dog_img/img02.png" alt="강아지2"></a></li>
+                <li class="bg-03"><a href="#"><img src="./dog_img/img03.png" alt="강아지3"></a></li>
+            </ul>
+        </div>
+        <button id="play">play</button>
+        <button id="stop">stop</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+        
+            let count = 0;
+            let bool = true;
+
+            $('#mainBox ul li').eq(count).fadeIn(300);
+            
+            let autoFade = setInterval(fadeInOut, 1500);
+
+            $('#play').on('click', function(){
+                if(bool === false){
+                    autoFade = setInterval(fadeInOut, 1500);//변수 자체를 갖고 와야 클리어 인터블을 돌 수 있음
+                    bool = true;
+                }
+            })
+
+            $('#stop').on('click', function(){
+                if(bool === true){
+                    clearInterval(autoFade); //clearInterval(변수명);
+                    bool = false;
+                }
+            })
+
+            function fadeInOut(){
+                count ++;
+                count %= $('#mainBox ul li').length;
+                $('#mainBox ul li').eq(count).fadeIn(300).siblings().fadeOut(300);
+            }
+        
+        });
+
+    </script>
+</body>
+</html>
