@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <p id="test">첫 번째 P태그</p>
+        <p class="test">두 번째 P태그</p>
+        <p>세 번째 P태그</p>
+
+        <div id="container"></div>
+
+        <script>
+            //$('p') -> 모든 p태그를 가져옴
+            // document.querySelector('#test')
+            // document.querySelector('.test') < 얘는 클래스부를 때
+            const tagP = document.querySelectorAll('P');
+            console,log(tagP.textContent);
+            // console,log(tagP.innerHTML);  
+            //일치하는 요소 중 첫 번째 요소를 반환
+            //일치하는 요소 없으면 null 반환
+            //textContent -> 메서드 -> 텍스트를 들고 옴
+            // innerHTML -> 태그까지 다룸
+            //단순히 텍스트만 다룰 땐 textContent를 쓰는 게 좋음
+
+            tagP.textContent = '<a href="#">텍스트 바꿔치기</a>';
+            const divtag = document.getElementById('container'); //<- 얘는 아이디라고 대놓고 있어써 # 안 붙여도 됨
+            console.log(divtag);
+            const box = document.createElement('div');
+            console.log(box); // 간직하고 있는 중임
+            createElement //-> 지정된 이름의 HTML 요소를 만들어서 반환
+            //만들어지고 반환되었다고 해서 바로 웹 브라우저에 추가? 
+            // 화면에 뿌려지는 작업을 해야 함
+
+            box.style.color = '#ff0000';
+            box.style.width = '200px';
+            box.style.height = '200px';
+            box.textContent = '컨텐츠 들어간다';
+            divtag.appendChild(box); // 선택한 노드의 마지막 자식 노드로 추가  
+            
+            document.querySelector(x); // css 선택자 X를 기반으로 첫 번째 요소 선택 / 얘네는 단수
+            document.querySelectorAll(x); // css 선택자 X를 기반으로 여러 요소 선택 / 얘네는 가져올 때 배열로 가져온다. (가져오는 단위가 복수여서)
+            document.getElementById(x); // 아이디의 속성 값을 기반으로 요소 선택
+            document.getElementsByClassName(x); // class 속성값을 기반으로 여러 요소 선택 / 얘네는 가져올 때 배열로 가져온다. (가져오는 단위가 복수여서)
+        </script>
+</body>
+</html>
